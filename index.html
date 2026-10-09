@@ -1,44 +1,260 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Liens</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    html { -webkit-font-smoothing: antialiased; }
-    body {
-      margin: 0;
-      background: #f3eee6;
-      color: #1c1916;
-      font-family: Outfit, system-ui, sans-serif;
-    }
-    main { max-width: 36rem; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      min-height: 3.5rem;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid #ddd6cb;
-      color: inherit;
-      text-decoration: none;
-      font-family: "Instrument Serif", Georgia, serif;
-      font-size: 1.5rem;
-    }
-    a:hover { color: #b4533a; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>olanlive</title>
+  <meta name="description" content="O'Tools, les blogs Pépites, et une sélection du portfolio." />
+  <meta name="theme-color" content="#2c3d8f" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta property="og:title" content="olanlive" />
+  <meta property="og:image" content="https://olanlive.github.io/og.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <main>
-    <a href="https://github.com/olanlive/o_tools">O Tools <span aria-hidden="true">↗</span></a>
-    <a href="https://olanlive.github.io/revue-animation/">Pépites Animation <span aria-hidden="true">↗</span></a>
-    <a href="https://olanlive.github.io/revue-audio-video/">Pépites Audio &amp; Vidéo <span aria-hidden="true">↗</span></a>
-    <a href="https://olanlive.github.io/revue-outils-it/">Pépites Outils IT <span aria-hidden="true">↗</span></a>
-    <a href="https://olanlive.github.io/revue-oss-3d/">Pépites OSS 3D &amp; VFX <span aria-hidden="true">↗</span></a>
-  </main>
+  <div id="top" class="min-h-screen bg-paper text-ink">
+    <header class="sticky top-0 z-30 bg-accent text-paper">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
+        <a href="#top" class="text-sm font-medium tracking-[0.18em] uppercase">olanlive</a>
+        <nav class="hidden items-center gap-6 sm:flex" aria-label="Sections">
+          <a href="#addon" class="text-sm text-paper/80 hover:text-paper"><span data-k="nav.addon">Addon</span></a>
+          <a href="#blogs" class="text-sm text-paper/80 hover:text-paper"><span data-k="nav.blogs">Blogs Pépites</span></a>
+          <a href="#portfolio" class="text-sm text-paper/80 hover:text-paper"><span data-k="nav.portfolio">Portfolio</span></a>
+        </nav>
+        <div class="flex items-center gap-1 text-sm">
+          <button type="button" data-lang="fr" class="min-h-11 min-w-11 uppercase tracking-wide text-paper" aria-pressed="true">FR</button>
+          <button type="button" data-lang="en" class="min-h-11 min-w-11 uppercase tracking-wide text-paper/55" aria-pressed="false">EN</button>
+        </div>
+      </div>
+      <nav class="flex border-t border-paper/20 sm:hidden" aria-label="Sections">
+        <a href="#addon" class="flex min-h-11 flex-1 items-center justify-center px-2 text-sm text-paper"><span data-k="nav.addon">Addon</span></a>
+        <a href="#blogs" class="flex min-h-11 flex-1 items-center justify-center px-2 text-sm text-paper"><span data-k="nav.blogs">Blogs Pépites</span></a>
+        <a href="#portfolio" class="flex min-h-11 flex-1 items-center justify-center px-2 text-sm text-paper"><span data-k="nav.portfolio">Portfolio</span></a>
+      </nav>
+    </header>
+    <main>
+      <section id="addon" class="scroll-mt-28">
+        <div class="mx-auto max-w-6xl px-5 py-10">
+          <p class="text-xs tracking-[0.16em] text-accent uppercase"><span data-k="addon.kicker">Addon Blender</span></p>
+          <h1 class="mt-2 text-3xl"><span data-k="addon.title">O'Tools</span></h1>
+          <p class="mt-3 max-w-xl leading-relaxed text-muted"><span data-k="addon.lead">Un addon pour le rigging et la lecture, dans le viewport. Chaque outil se coche seul.</span></p>
+          <h2 class="mt-10 text-xl"><span data-k="addon.featuresTitle">Fonctionnalités</span></h2>
+          <ul class="mt-6 grid gap-x-10 gap-y-8 sm:grid-cols-2"><li>
+      <img src="/otools/bone-wire.gif" alt=""  class="mb-3 w-full max-w-56 bg-ink object-contain" />
+      <h3 class="text-base font-medium">Bone Wire / In Front</h3>
+      <p class="mt-1 max-w-md leading-relaxed text-muted"><span data-k="addon.features.0.text">Bone en fil de fer affiché devant l’objet.</span></p>
+    </li><li>
+      <img src="/otools/slow-mo.gif" alt="" loading="lazy" class="mb-3 w-full max-w-56 bg-ink object-contain" />
+      <h3 class="text-base font-medium">Smart Slow-Mo</h3>
+      <p class="mt-1 max-w-md leading-relaxed text-muted"><span data-k="addon.features.1.text">Un ralenti temporaire pour mieux comprendre son anim. 24 devient 6, 25 devient 5, 30 devient 6. Un multiple entier du FPS.</span></p>
+    </li><li>
+      <img src="/otools/profil.gif" alt="" loading="lazy" class="mb-3 w-full max-w-56 bg-ink object-contain" />
+      <h3 class="text-base font-medium">Profil Viewport</h3>
+      <p class="mt-1 max-w-md leading-relaxed text-muted"><span data-k="addon.features.2.text">Vue en silhouette pour un meilleur impact des poses. Retour exact à l’état d’avant, sur chaque vue.</span></p>
+    </li><li>
+      <img src="/otools/status-bar.png" alt="" loading="lazy" class="mb-3 w-full max-w-56 bg-ink object-contain" />
+      <h3 class="text-base font-medium">Status Bar Filename</h3>
+      <p class="mt-1 max-w-md leading-relaxed text-muted"><span data-k="addon.features.3.text">Le nom du .blend en bas à droite, avec une étoile s’il a changé. C’est pratique lorsqu’on utilise Blender en plein écran comme moi.</span></p>
+    </li><li>
+      
+      <h3 class="text-base font-medium">Préférences</h3>
+      <p class="mt-1 max-w-md leading-relaxed text-muted"><span data-k="addon.features.4.text">Une case par outil. Rien ne reste allumé si tu ne le veux pas.</span></p>
+    </li></ul>
+        </div>
+        <div class="border-t border-line bg-accent-soft">
+          <div class="mx-auto max-w-6xl px-5 py-10">
+            <h2 class="text-xl"><span data-k="addon.install">Installation</span></h2>
+            <div class="mt-6 grid gap-8 sm:grid-cols-2">
+              <div>
+                <h3 class="text-xs font-medium tracking-[0.16em] text-accent uppercase"><span data-k="addon.extTitle">Dépôt distant</span></h3>
+                <p class="mt-2 leading-relaxed"><span data-k="addon.extLead">Installation recommandée pour être tenu au courant des mises à jour.</span></p>
+                <ol class="mt-2 space-y-1 leading-relaxed"><li><span data-k="addon.ext.0">Edit → Preferences → Get Extensions.</span></li><li><span data-k="addon.ext.1">Repositories → + → Add Remote Repository.</span></li><li><span data-k="addon.ext.2">Coller l’adresse du dépôt, cocher la vérification au démarrage.</span></li><li><span data-k="addon.ext.3">Installer O'Tools, puis l’activer. Les versions suivantes arrivent dans Blender.</span></li></ol>
+                <a href="https://olanlive.github.io/o_tools/index.json" class="mt-3 inline-flex min-h-11 items-center gap-1 text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"><span data-k="addon.repo">Dépôt de l’extension</span><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+              </div>
+              <div>
+                <h3 class="text-xs font-medium tracking-[0.16em] text-accent uppercase"><span data-k="addon.zipTitle">Archive zip</span></h3>
+                <p class="mt-2 leading-relaxed text-muted"><span data-k="addon.zip">Le zip ne prévient pas des mises à jour.</span></p>
+                <a href="https://github.com/olanlive/o_tools/releases" class="mt-3 inline-flex min-h-11 items-center gap-1 text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"><span data-k="addon.releases">Télécharger la release</span><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                <p class="mt-4 text-sm text-muted"><span data-k="addon.license">GPL-3.0</span></p>
+              </div>
+            </div>
+            <p class="mt-6 leading-relaxed"><span data-k="addon.remove">Supprimer d’abord la version précédente si elle est installée (O Tools).</span></p>
+          </div>
+        </div>
+      </section>
+      <section id="blogs" class="scroll-mt-28 border-b border-line bg-blogs">
+        <div class="mx-auto max-w-6xl px-5 py-10">
+          <p class="text-xs tracking-[0.16em] text-accent uppercase"><span data-k="blogs.kicker">Veille</span></p>
+          <h2 class="mt-2 text-3xl"><span data-k="blogs.title">Blogs Pépites</span></h2>
+          <p class="mt-3 max-w-2xl leading-relaxed text-muted"><span data-k="blogs.lead">Quatre revues, l’open source d’abord. Chaque trouvaille a une adresse officielle et une source. Ici, les deux dernières.</span></p>
+          <div class="mt-8 grid gap-8 lg:grid-cols-2"><article class="border-t border-line pt-6">
+      <div class="flex items-baseline justify-between gap-4">
+        <h3 class="text-lg"><span data-k="blogs.names.animation">Pépites Animation</span></h3>
+        <p class="shrink-0 text-sm text-muted"><span data-k="blogs.cadence.animation">Tous les jours</span></p>
+      </div>
+      <p class="mt-2 text-muted"><span data-k="blogs.about.animation">Animation, rigging, mocap, Grease Pencil.</span></p>
+      <ul class="mt-5"><li class="border-b border-line py-4">
+              <a href="https://olanlive.github.io/revue-animation/#2026-10-09-cveld-edit-paint" class="font-medium hover:text-accent">cvELD Edit Paint</a>
+              <p class="mt-1 text-sm text-muted"><span data-fr="9 oct. 2026" data-en="9 Oct 2026">9 oct. 2026</span></p>
+              <p class="mt-2 line-clamp-3 leading-relaxed text-muted">Add-on Blender (9,99 $, payant mais sous GPL) qui permet de peindre les poids de plusieurs os directement en mode Édition : demi-pinceau, dégradés directionnels (dont Ribbon), éditeur de poids par sommet, normalisation stricte et verrous protégés. Blender 4.5 à 5.2.</p>
+            </li><li class="border-b border-line py-4">
+              <a href="https://olanlive.github.io/revue-animation/#2026-10-09-riginsec" class="font-medium hover:text-accent">Riginsec</a>
+              <p class="mt-1 text-sm text-muted"><span data-fr="9 oct. 2026" data-en="9 Oct 2026">9 oct. 2026</span></p>
+              <p class="mt-2 line-clamp-3 leading-relaxed text-muted">Nouvel add-on Blender gratuit (Gumroad, prix libre) sorti le 5 octobre : il rigge une surface et génère ses poids en quelques secondes pour l’animer tout de suite. Projet tout jeune, peu documenté et licence non précisée : à tester sur un fichier de travail.</p>
+            </li></ul>
+      <a href="https://olanlive.github.io/revue-animation/" class="mt-4 inline-flex min-h-11 items-center gap-1 text-ink underline decoration-line underline-offset-4 hover:text-accent hover:decoration-accent"><span data-k="blogs.more">Voir la revue</span><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    </article><article class="border-t border-line pt-6">
+      <div class="flex items-baseline justify-between gap-4">
+        <h3 class="text-lg"><span data-k="blogs.names.audio">Pépites Audio &amp; Vidéo</span></h3>
+        <p class="shrink-0 text-sm text-muted"><span data-k="blogs.cadence.audio">Tous les deux jours</span></p>
+      </div>
+      <p class="mt-2 text-muted"><span data-k="blogs.about.audio">Logiciels et add-ons audio et vidéo.</span></p>
+      <ul class="mt-5"><li class="border-b border-line py-4">
+              <a href="https://olanlive.github.io/revue-audio-video/#2026-10-09-obs-studio-33-0-rc1" class="font-medium hover:text-accent">OBS Studio 33.0 RC1</a>
+              <p class="mt-1 text-sm text-muted"><span data-fr="9 oct. 2026" data-en="9 Oct 2026">9 oct. 2026</span></p>
+              <p class="mt-2 line-clamp-3 leading-relaxed text-muted">Déjà vu le 7 oct en bêta 6 : OBS 33.0 passe en release candidate (9 oct). Sources navigateur corrigées (page blanche au rafraîchissement, requêtes réseau local), Plugin Manager fiabilisé en mode sans échec : la version finale approche.</p>
+            </li><li class="border-b border-line py-4">
+              <a href="https://olanlive.github.io/revue-audio-video/#2026-10-09-mediamtx-1-21-2" class="font-medium hover:text-accent">MediaMTX 1.21.2</a>
+              <p class="mt-1 text-sm text-muted"><span data-fr="9 oct. 2026" data-en="9 Oct 2026">9 oct. 2026</span></p>
+              <p class="mt-2 line-clamp-3 leading-relaxed text-muted">Serveur et proxy de flux live prêt à l’emploi (SRT, WebRTC, RTSP, RTMP, LL-HLS, Media-over-QUIC) qui publie, enregistre et relit audio et vidéo. La 1.21.2 (8 oct) ferme un accès libre au serveur de relecture et filtre les SEI non standard de certaines caméras.</p>
+            </li></ul>
+      <a href="https://olanlive.github.io/revue-audio-video/" class="mt-4 inline-flex min-h-11 items-center gap-1 text-ink underline decoration-line underline-offset-4 hover:text-accent hover:decoration-accent"><span data-k="blogs.more">Voir la revue</span><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    </article><article class="border-t border-line pt-6">
+      <div class="flex items-baseline justify-between gap-4">
+        <h3 class="text-lg"><span data-k="blogs.names.it">Pépites Outils IT</span></h3>
+        <p class="shrink-0 text-sm text-muted"><span data-k="blogs.cadence.it">Tous les deux jours</span></p>
+      </div>
+      <p class="mt-2 text-muted"><span data-k="blogs.about.it">Ferme de rendu, stockage, déploiement, réseau.</span></p>
+      <ul class="mt-5"><li class="border-b border-line py-4">
+              <a href="https://olanlive.github.io/revue-outils-it/#2026-10-08-opencue-1-34-22" class="font-medium hover:text-accent">OpenCue 1.34.22</a>
+              <p class="mt-1 text-sm text-muted"><span data-fr="8 oct. 2026" data-en="8 Oct 2026">8 oct. 2026</span></p>
+              <p class="mt-2 line-clamp-3 leading-relaxed text-muted">Le gestionnaire de render farm open source de l’ASWF (sorti le 7 oct) intègre Maestro, nouveau scheduler dans Cuebot, une interface web à parité avec CueGUI et des limites par hôte alimentées par l’usage réel des licences. Migrations de base : sauvegarder avant.</p>
+            </li><li class="border-b border-line py-4">
+              <a href="https://olanlive.github.io/revue-outils-it/#2026-10-08-portainer-2-45-2-lts" class="font-medium hover:text-accent">Portainer 2.45.2 LTS</a>
+              <p class="mt-1 text-sm text-muted"><span data-fr="8 oct. 2026" data-en="8 Oct 2026">8 oct. 2026</span></p>
+              <p class="mt-2 line-clamp-3 leading-relaxed text-muted">L’interface web de gestion Docker/Kubernetes sort une LTS corrective le 8 oct : un non-admin ne peut plus lire de fichiers de l’hôte via un Compose, et la vérification TLS vers l’API Kubernetes est rétablie. Mise à jour conseillée.</p>
+            </li></ul>
+      <a href="https://olanlive.github.io/revue-outils-it/" class="mt-4 inline-flex min-h-11 items-center gap-1 text-ink underline decoration-line underline-offset-4 hover:text-accent hover:decoration-accent"><span data-k="blogs.more">Voir la revue</span><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    </article><article class="border-t border-line pt-6">
+      <div class="flex items-baseline justify-between gap-4">
+        <h3 class="text-lg"><span data-k="blogs.names.oss">Pépites OSS 3D &amp; VFX</span></h3>
+        <p class="shrink-0 text-sm text-muted"><span data-k="blogs.cadence.oss">Tous les jours</span></p>
+      </div>
+      <p class="mt-2 text-muted"><span data-k="blogs.about.oss">Logiciels libres 3D, VFX et vidéo.</span></p>
+      <ul class="mt-5"><li class="border-b border-line py-4">
+              <a href="https://olanlive.github.io/revue-oss-3d/#2026-10-09-nuke-comfyui-bridge-0-1-0" class="font-medium hover:text-accent">Nuke × ComfyUI bridge 0.1.0</a>
+              <p class="mt-1 text-sm text-muted"><span data-fr="9 oct. 2026" data-en="9 Oct 2026">9 oct. 2026</span></p>
+              <p class="mt-2 line-clamp-3 leading-relaxed text-muted">Nouveau (8 oct) : un panneau Nuke envoie une plaque à ComfyUI et récupère un EXR multicouche par frame avec normales, profondeur métrique, position et matte alpha. Expérience perso, testée sur RTX 3090.</p>
+            </li><li class="border-b border-line py-4">
+              <a href="https://olanlive.github.io/revue-oss-3d/#2026-10-09-usd-optimize-1-3-1-nvidia" class="font-medium hover:text-accent">usd-optimize 1.3.1 (NVIDIA)</a>
+              <p class="mt-1 text-sm text-muted"><span data-fr="9 oct. 2026" data-en="9 Oct 2026">9 oct. 2026</span></p>
+              <p class="mt-2 line-clamp-3 leading-relaxed text-muted">Version du 7 oct de la lib d’optimisation de stages OpenUSD : support USD 26.08, wheel Linux allégée, et correctif qui rend enfin fiables les checks de shaders UsdPreviewSurface.</p>
+            </li></ul>
+      <a href="https://olanlive.github.io/revue-oss-3d/" class="mt-4 inline-flex min-h-11 items-center gap-1 text-ink underline decoration-line underline-offset-4 hover:text-accent hover:decoration-accent"><span data-k="blogs.more">Voir la revue</span><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+    </article></div>
+        </div>
+      </section>
+      <section id="portfolio" class="scroll-mt-28 bg-folio">
+        <div class="mx-auto max-w-6xl px-5 py-10">
+          <p class="text-xs tracking-[0.16em] text-accent uppercase"><span data-k="portfolio.kicker">Images</span></p>
+          <h2 class="mt-2 text-3xl"><span data-k="portfolio.title">Portfolio</span></h2>
+          <p class="mt-3 max-w-xl leading-relaxed text-muted"><span data-k="portfolio.lead">Une sélection. Le reste est sur ArtStation.</span></p>
+          <ul class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4"><li>
+      <a href="https://www.artstation.com/artwork/Jrdrgz" class="group block">
+        <img src="https://cdna.artstation.com/p/assets/covers/images/093/829/960/small_square/olivier-l-olivier-l-mpv-shot0003.jpg?1763649697" alt="" class="aspect-square w-full object-cover" />
+        <span class="mt-2 block text-sm leading-snug group-hover:text-accent">Demo Reel - October 2025</span>
+      </a>
+    </li><li>
+      <a href="https://www.artstation.com/artwork/1NvE18" class="group block">
+        <img src="https://cdna.artstation.com/p/assets/videos/images/093/365/284/small_square/olivier-l-maxresdefault.jpg?1762337342" alt="" class="aspect-square w-full object-cover" />
+        <span class="mt-2 block text-sm leading-snug group-hover:text-accent">Blob character</span>
+      </a>
+    </li><li>
+      <a href="https://www.artstation.com/artwork/4N49G1" class="group block">
+        <img src="https://cdnb.artstation.com/p/assets/videos/images/092/814/125/small_square/olivier-l-2071214567-d9988a360bfbec641a9105d5f8e8094dac496f57b5a90fc290116884dff514c5-d-295x166.jpg?1760709513" alt="" class="aspect-square w-full object-cover" />
+        <span class="mt-2 block text-sm leading-snug group-hover:text-accent">Rampage Rally 3D Challenge - my animation</span>
+      </a>
+    </li><li>
+      <a href="https://www.artstation.com/artwork/3qdLrg" class="group block">
+        <img src="https://cdna.artstation.com/p/assets/images/images/062/109/836/small_square/olivier-l-cables-2023-04-25.jpg?1682377793" alt="" class="aspect-square w-full object-cover" />
+        <span class="mt-2 block text-sm leading-snug group-hover:text-accent">Cables</span>
+      </a>
+    </li><li>
+      <a href="https://www.artstation.com/artwork/B3bKq9" class="group block">
+        <img src="https://cdnb.artstation.com/p/assets/covers/images/056/043/243/20221113070725/small_square/olivier-l-olivier-l-bureau-bois-version-2022.jpg?1668344845" alt="" class="aspect-square w-full object-cover" />
+        <span class="mt-2 block text-sm leading-snug group-hover:text-accent">Arch offices</span>
+      </a>
+    </li><li>
+      <a href="https://www.artstation.com/artwork/nYyv1e" class="group block">
+        <img src="https://cdna.artstation.com/p/assets/model3ds/images/034/740/766/20210211162156/small_square/olivier-l-021b36d246244c64b7647ab44f19b66d.jpg?1613082116" alt="" class="aspect-square w-full object-cover" />
+        <span class="mt-2 block text-sm leading-snug group-hover:text-accent">Teaspoon</span>
+      </a>
+    </li></ul>
+          <a href="https://www.artstation.com/olanlive" class="mt-8 inline-flex min-h-11 items-center gap-1 text-ink underline decoration-line underline-offset-4 hover:text-accent hover:decoration-accent"><span data-k="portfolio.all">Voir le profil</span><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        </div>
+      </section>
+    </main>
+    <footer class="border-t border-line">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-6 text-sm text-muted">
+        <p>olanlive</p>
+        <a href="https://github.com/olanlive/o_tools" class="text-accent hover:underline">O'Tools</a>
+      </div>
+    </footer>
+  </div>
+  <script id="i18n" type="application/json">{"fr":{"nav":{"addon":"Addon","blogs":"Blogs Pépites","portfolio":"Portfolio"},"addon":{"kicker":"Addon Blender","title":"O'Tools","lead":"Un addon pour le rigging et la lecture, dans le viewport. Chaque outil se coche seul.","featuresTitle":"Fonctionnalités","features":[{"name":"Bone Wire / In Front","text":"Bone en fil de fer affiché devant l’objet."},{"name":"Smart Slow-Mo","text":"Un ralenti temporaire pour mieux comprendre son anim. 24 devient 6, 25 devient 5, 30 devient 6. Un multiple entier du FPS."},{"name":"Profil Viewport","text":"Vue en silhouette pour un meilleur impact des poses. Retour exact à l’état d’avant, sur chaque vue."},{"name":"Status Bar Filename","text":"Le nom du .blend en bas à droite, avec une étoile s’il a changé. C’est pratique lorsqu’on utilise Blender en plein écran comme moi."},{"name":"Préférences","text":"Une case par outil. Rien ne reste allumé si tu ne le veux pas."}],"install":"Installation","extTitle":"Dépôt distant","extLead":"Installation recommandée pour être tenu au courant des mises à jour.","ext":["Edit → Preferences → Get Extensions.","Repositories → + → Add Remote Repository.","Coller l’adresse du dépôt, cocher la vérification au démarrage.","Installer O'Tools, puis l’activer. Les versions suivantes arrivent dans Blender."],"zipTitle":"Archive zip","zip":"Le zip ne prévient pas des mises à jour.","remove":"Supprimer d’abord la version précédente si elle est installée (O Tools).","releases":"Télécharger la release","repo":"Dépôt de l’extension","license":"GPL-3.0"},"blogs":{"kicker":"Veille","title":"Blogs Pépites","lead":"Quatre revues, l’open source d’abord. Chaque trouvaille a une adresse officielle et une source. Ici, les deux dernières.","more":"Voir la revue","empty":"La revue ne répond pas pour le moment.","names":{"animation":"Pépites Animation","audio":"Pépites Audio & Vidéo","it":"Pépites Outils IT","oss":"Pépites OSS 3D & VFX"},"cadence":{"animation":"Tous les jours","audio":"Tous les deux jours","it":"Tous les deux jours","oss":"Tous les jours"},"about":{"animation":"Animation, rigging, mocap, Grease Pencil.","audio":"Logiciels et add-ons audio et vidéo.","it":"Ferme de rendu, stockage, déploiement, réseau.","oss":"Logiciels libres 3D, VFX et vidéo."}},"portfolio":{"kicker":"Images","title":"Portfolio","lead":"Une sélection. Le reste est sur ArtStation.","all":"Voir le profil"}},"en":{"nav":{"addon":"Add-on","blogs":"Pépites blogs","portfolio":"Portfolio"},"addon":{"kicker":"Blender add-on","title":"O'Tools","lead":"An add-on for rigging and playback, in the viewport. Each tool has its own checkbox.","featuresTitle":"Features","features":[{"name":"Bone Wire / In Front","text":"Bones as wire, shown in front of the object."},{"name":"Smart Slow-Mo","text":"A temporary slow-motion, to read the animation. 24 becomes 6, 25 becomes 5, 30 becomes 6. A whole-number multiple of the FPS."},{"name":"Profil Viewport","text":"A silhouette view, for a stronger read of the poses. The previous state comes back exactly, on every view."},{"name":"Status Bar Filename","text":"The .blend name at the bottom right, with a star if it changed. Handy when you use Blender full screen, as I do."},{"name":"Preferences","text":"One checkbox per tool. Nothing stays on unless you want it."}],"install":"Install","extTitle":"Remote repository","extLead":"The recommended install, so you hear about updates.","ext":["Edit → Preferences → Get Extensions.","Repositories → + → Add Remote Repository.","Paste the repository address and check for updates on startup.","Install O'Tools, then enable it. Later versions arrive inside Blender."],"zipTitle":"Zip archive","zip":"The zip does not announce later updates.","remove":"Remove the previous version first if it is installed (O Tools).","releases":"Download the release","repo":"Extension repository","license":"GPL-3.0"},"blogs":{"kicker":"Watch","title":"Pépites blogs","lead":"Four reviews, open source first. Each find has an official address and a source. Shown here, the latest two.","more":"Open the review","empty":"This review is not answering right now.","names":{"animation":"Pépites Animation","audio":"Pépites Audio & Video","it":"Pépites IT tools","oss":"Pépites OSS 3D & VFX"},"cadence":{"animation":"Every day","audio":"Every other day","it":"Every other day","oss":"Every day"},"about":{"animation":"Animation, rigging, mocap, Grease Pencil.","audio":"Audio and video software and add-ons.","it":"Render farm, storage, deployment, network.","oss":"Open-source 3D, VFX, and video software."}},"portfolio":{"kicker":"Pictures","title":"Portfolio","lead":"A short selection. The rest is on ArtStation.","all":"Open the profile"}}}</script>
+  <script>
+    const dict = JSON.parse(document.getElementById("i18n").textContent);
+    const buttons = [...document.querySelectorAll("[data-lang]")];
+    function lookup(path, lang) {
+      return path.split(".").reduce((value, key) => value?.[key], dict[lang]);
+    }
+    function apply(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-k]").forEach((node) => {
+        const value = lookup(node.dataset.k, lang);
+        if (typeof value === "string") node.textContent = value;
+      });
+      document.querySelectorAll("[data-fr]").forEach((node) => {
+        node.textContent = node.dataset[lang] || "";
+      });
+      buttons.forEach((button) => {
+        const on = button.dataset.lang === lang;
+        button.setAttribute("aria-pressed", on ? "true" : "false");
+        button.className = "min-h-11 min-w-11 uppercase tracking-wide " + (on ? "text-paper" : "text-paper/55");
+      });
+      localStorage.setItem("lang", lang);
+    }
+    buttons.forEach((button) => button.addEventListener("click", () => apply(button.dataset.lang)));
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const id = link.getAttribute("href").slice(1);
+        const target = document.getElementById(id);
+        if (!target) return;
+        event.preventDefault();
+        const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const header = document.querySelector("header");
+        const end = target.getBoundingClientRect().top + window.scrollY - header.getBoundingClientRect().height - 12;
+        if (reduce) window.scrollTo(0, end);
+        else {
+          const start = window.scrollY;
+          const change = end - start;
+          const duration = Math.min(2000, Math.max(900, Math.abs(change) * 0.7));
+          const t0 = performance.now();
+          const step = (now) => {
+            const t = Math.min(1, (now - t0) / duration);
+            window.scrollTo(0, start + change * (1 - (1 - t) ** 3));
+            if (t < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        }
+        history.pushState(null, "", "#" + id);
+      });
+    });
+    const saved = localStorage.getItem("lang");
+    if (saved === "en" || saved === "fr") apply(saved);
+  </script>
 </body>
 </html>
