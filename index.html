@@ -72,7 +72,12 @@
                 <h3 class="text-xs font-medium tracking-[0.16em] text-accent uppercase"><span data-k="addon.extTitle">Dépôt distant</span></h3>
                 <p class="mt-2 leading-relaxed"><span data-k="addon.extLead">Installation recommandée pour être tenu au courant des mises à jour.</span></p>
                 <ol class="mt-2 space-y-1 leading-relaxed"><li><span data-k="addon.ext.0">Edit → Preferences → Get Extensions.</span></li><li><span data-k="addon.ext.1">Repositories → + → Add Remote Repository.</span></li><li><span data-k="addon.ext.2">Coller l’adresse du dépôt, cocher la vérification au démarrage.</span></li><li><span data-k="addon.ext.3">Installer O'Tools, puis l’activer. Les versions suivantes arrivent dans Blender.</span></li></ol>
-                <a href="https://olanlive.github.io/o_tools/index.json" class="mt-3 inline-flex min-h-11 items-center gap-1 text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"><span data-k="addon.repo">Dépôt de l’extension</span><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+                <div class="mt-3 flex items-center gap-2">
+                  <p id="repo-url" class="min-w-0 flex-1 overflow-x-auto rounded-md border border-line bg-paper px-3 py-2 text-sm whitespace-nowrap select-all">https://olanlive.github.io/o_tools/index.json</p>
+                  <button type="button" id="copy-repo" class="inline-flex size-11 shrink-0 items-center justify-center rounded-md border border-line bg-paper text-accent" aria-label="Copier l’adresse">
+                    <svg id="copy-icon" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  </button>
+                </div>
               </div>
               <div>
                 <h3 class="text-xs font-medium tracking-[0.16em] text-accent uppercase"><span data-k="addon.zipTitle">Archive zip</span></h3>
@@ -226,6 +231,10 @@
         button.className = "min-h-11 min-w-11 uppercase tracking-wide " + (on ? "text-paper" : "text-paper/55");
       });
       localStorage.setItem("lang", lang);
+      const copyButton = document.getElementById("copy-repo");
+      if (copyButton) {
+        copyButton.setAttribute("aria-label", lang === "en" ? "Copy the address" : "Copier l’adresse");
+      }
     }
     buttons.forEach((button) => button.addEventListener("click", () => apply(button.dataset.lang)));
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
@@ -255,6 +264,21 @@
     });
     const saved = localStorage.getItem("lang");
     if (saved === "en" || saved === "fr") apply(saved);
+    const copyBtn = document.getElementById("copy-repo");
+    const copyIcon = document.getElementById("copy-icon");
+    const copySvg = copyIcon.outerHTML;
+    const checkSvg = '<svg id="copy-icon" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+    copyBtn.addEventListener("click", async () => {
+      const url = document.getElementById("repo-url").textContent.trim();
+      try { await navigator.clipboard.writeText(url); } catch { return; }
+      const lang = document.documentElement.lang === "en" ? "en" : "fr";
+      copyBtn.setAttribute("aria-label", lang === "en" ? "Address copied" : "Adresse copiée");
+      copyBtn.innerHTML = checkSvg;
+      window.setTimeout(() => {
+        copyBtn.innerHTML = copySvg;
+        copyBtn.setAttribute("aria-label", lang === "en" ? "Copy the address" : "Copier l’adresse");
+      }, 1600);
+    });
   </script>
 </body>
 </html>
