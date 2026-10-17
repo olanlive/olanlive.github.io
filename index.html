@@ -220,7 +220,7 @@
         button.setAttribute("aria-pressed", on ? "true" : "false");
         button.className = "min-h-11 min-w-11 uppercase tracking-wide " + (on ? "text-paper" : "text-paper/55");
       });
-      localStorage.setItem("lang", lang);
+      try { localStorage.setItem("pepites-lang", lang); } catch {}
       const copyButton = document.getElementById("copy-repo");
       if (copyButton) {
         copyButton.setAttribute("aria-label", lang === "en" ? "Copy the address" : "Copier l’adresse");
@@ -252,7 +252,14 @@
         history.pushState(null, "", "#" + id);
       });
     });
-    const saved = localStorage.getItem("lang");
+    let saved = null;
+    try {
+      saved = localStorage.getItem("pepites-lang");
+      if (saved !== "en" && saved !== "fr") {
+        const old = localStorage.getItem("lang");
+        if (old === "en" || old === "fr") { saved = old; localStorage.setItem("pepites-lang", old); }
+      }
+    } catch {}
     if (saved === "en" || saved === "fr") apply(saved);
     const copyBtn = document.getElementById("copy-repo");
     const copyIcon = document.getElementById("copy-icon");
