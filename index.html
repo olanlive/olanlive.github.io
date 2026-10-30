@@ -6,9 +6,9 @@
   <title>olanlive</title>
   <meta name="description" content="O'Tools, les blogs Pépites, et une sélection du portfolio." />
   <meta name="theme-color" content="#2c3d8f" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#5C2A1E" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#26305F" media="(prefers-color-scheme: dark)" />
   <script>
-    try { var t = localStorage.getItem("olanlive-theme"); if (t === "light" || t === "dark") { document.documentElement.dataset.theme = t; document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) { m.content = t === "dark" ? "#5C2A1E" : "#2c3d8f"; }); } } catch (e) {}
+    try { var t = localStorage.getItem("olanlive-theme"); if (t === "light" || t === "dark") { document.documentElement.dataset.theme = t; document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) { m.content = t === "dark" ? "#26305F" : "#2c3d8f"; }); } } catch (e) {}
   </script>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta property="og:title" content="olanlive" />
@@ -22,17 +22,22 @@
     :root { color-scheme: light dark; --olv-header: #2c3d8f; --olv-header-ink: #f4f6f4; }
     :root[data-theme="light"] { color-scheme: light; }
     @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) { color-scheme: dark; --color-paper: #1C1916; --color-ink: #F3EEE6; --color-muted: #A89E92; --color-line: #463D36; --color-accent: #DD8065; --color-accent-soft: #2E241F; --color-blogs: #2A2420; --color-folio: #231E1A; --olv-header: #5C2A1E; --olv-header-ink: #F3EEE6; }
+      :root:not([data-theme="light"]) { color-scheme: dark; --color-paper: #1C1916; --color-ink: #F3EEE6; --color-muted: #A89E92; --color-line: #463D36; --color-accent: #9AA6EC; --color-accent-soft: #2E241F; --color-blogs: #2A2420; --color-folio: #231E1A; --olv-header: #26305F; --olv-header-ink: #F3EEE6; }
       :root:not([data-theme="light"]) .bg-ink { background-color: #0E0C0A; box-shadow: 0 0 0 1px var(--color-line); }
       :root:not([data-theme="light"]) header .text-paper\/55 { color: color-mix(in oklab, var(--color-paper) 62%, transparent); }
     }
-    :root[data-theme="dark"] { color-scheme: dark; --color-paper: #1C1916; --color-ink: #F3EEE6; --color-muted: #A89E92; --color-line: #463D36; --color-accent: #DD8065; --color-accent-soft: #2E241F; --color-blogs: #2A2420; --color-folio: #231E1A; --olv-header: #5C2A1E; --olv-header-ink: #F3EEE6; }
+    :root[data-theme="dark"] { color-scheme: dark; --color-paper: #1C1916; --color-ink: #F3EEE6; --color-muted: #A89E92; --color-line: #463D36; --color-accent: #9AA6EC; --color-accent-soft: #2E241F; --color-blogs: #2A2420; --color-folio: #231E1A; --olv-header: #26305F; --olv-header-ink: #F3EEE6; }
     :root[data-theme="dark"] .bg-ink { background-color: #0E0C0A; box-shadow: 0 0 0 1px var(--color-line); }
     :root[data-theme="dark"] header .text-paper\/55 { color: color-mix(in oklab, var(--color-paper) 62%, transparent); }
     header { --color-accent: var(--olv-header); --color-paper: var(--olv-header-ink); }
     header a:focus-visible, header button:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
     @media (width < 40rem) { .olv-gh-text { display: none; } header .olv-tools { gap: 0; } header .olv-tools > a { padding-inline: .375rem; } }
-    @media (width < 23.75rem) { header .olv-tools > button { min-width: 2.5rem; } }
+    header .olv-tools > a { min-width: 2.75rem; justify-content: center; }
+    .olv-seg { display: inline-flex; align-items: center; }
+    .olv-cycle { display: none; }
+    .olv-cycle .olv-i-light, .olv-cycle .olv-i-dark, :root[data-theme] .olv-cycle .olv-i-auto { display: none; }
+    :root[data-theme="light"] .olv-cycle .olv-i-light, :root[data-theme="dark"] .olv-cycle .olv-i-dark { display: block; }
+    @media (width < 48rem) { header .olv-seg { display: none; } header .olv-cycle { display: inline-flex; } .olv-gh-text { display: none; } }
     @media (prefers-reduced-motion: no-preference) {
       html.olv-theme-anim, html.olv-theme-anim *, html.olv-theme-anim *::before, html.olv-theme-anim *::after { transition: background-color .2s ease, color .2s ease, border-color .2s ease, text-decoration-color .2s ease, box-shadow .2s ease; }
     }
@@ -62,8 +67,8 @@
         </nav>
         <div class="olv-tools flex items-center gap-1 text-sm">
           <a href="https://github.com/olanlive" aria-label="GitHub" class="inline-flex min-h-11 items-center gap-2 px-2 text-paper/80 hover:text-paper"><svg class="size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.780-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.070-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="olv-gh-text">GitHub</span></a>
-          <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center text-paper/55" aria-pressed="false" data-theme-btn="light" aria-label="Thème clair" title="Thème clair · cliquer à nouveau pour suivre le système"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
-          <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center text-paper/55" aria-pressed="false" data-theme-btn="dark" aria-label="Thème sombre" title="Thème sombre · cliquer à nouveau pour suivre le système"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
+          <div class="olv-seg" role="group" aria-label="Thème" data-theme-group><button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center text-paper" aria-pressed="true" data-theme-btn="auto" aria-label="Thème automatique (suit le système)" title="Thème automatique (suit le système)"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 18a6 6 0 0 0 0-12v12z"/></svg></button><button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center text-paper/55" aria-pressed="false" data-theme-btn="light" aria-label="Thème clair" title="Thème clair"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button><button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center text-paper/55" aria-pressed="false" data-theme-btn="dark" aria-label="Thème sombre" title="Thème sombre"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button></div>
+          <button type="button" class="olv-cycle min-h-11 min-w-11 items-center justify-center text-paper" data-theme-cycle aria-label="Thème : Auto (suivant : Clair)" title="Thème : Auto (suivant : Clair)"><svg class="olv-i-auto size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 18a6 6 0 0 0 0-12v12z"/></svg><svg class="olv-i-light size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg><svg class="olv-i-dark size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
           <button type="button" data-lang="fr" class="min-h-11 min-w-11 uppercase tracking-wide text-paper" aria-pressed="true">FR</button>
           <button type="button" data-lang="en" class="min-h-11 min-w-11 uppercase tracking-wide text-paper/55" aria-pressed="false">EN</button>
         </div>
@@ -223,17 +228,27 @@
     const dict = JSON.parse(document.getElementById("i18n").textContent);
     const buttons = [...document.querySelectorAll("[data-lang]")];
     const themeButtons = [...document.querySelectorAll("[data-theme-btn]")];
+    const themeGroup = document.querySelector("[data-theme-group]");
+    const themeCycle = document.querySelector("[data-theme-cycle]");
     const THEME_LABELS = {
-      fr: { light: "Thème clair", dark: "Thème sombre", again: " · cliquer à nouveau pour suivre le système" },
-      en: { light: "Light theme", dark: "Dark theme", again: " · click again to follow the system" },
+      fr: { group: "Thème", auto: "Thème automatique (suit le système)", light: "Thème clair", dark: "Thème sombre", names: { auto: "Auto", light: "Clair", dark: "Sombre" }, cycle: (now, next) => `Thème : ${now} (suivant : ${next})` },
+      en: { group: "Theme", auto: "Automatic theme (follows the system)", light: "Light theme", dark: "Dark theme", names: { auto: "Auto", light: "Light", dark: "Dark" }, cycle: (now, next) => `Theme: ${now} (next: ${next})` },
     };
+    const THEME_NEXT = { auto: "light", light: "dark", dark: "auto" };
+    let themeLang = "fr";
     function labelThemeButtons(lang) {
-      const labels = THEME_LABELS[lang] || THEME_LABELS.fr;
+      themeLang = THEME_LABELS[lang] ? lang : "fr";
+      const labels = THEME_LABELS[themeLang];
+      themeGroup.setAttribute("aria-label", labels.group);
       themeButtons.forEach((button) => {
         const label = labels[button.dataset.themeBtn];
         button.setAttribute("aria-label", label);
-        button.title = label + labels.again;
+        button.title = label;
       });
+      const now = document.documentElement.dataset.theme || "auto";
+      const cycleLabel = labels.cycle(labels.names[now], labels.names[THEME_NEXT[now]]);
+      themeCycle.setAttribute("aria-label", cycleLabel);
+      themeCycle.title = cycleLabel;
     }
     function lookup(path, lang) {
       return path.split(".").reduce((value, key) => value?.[key], dict[lang]);
@@ -295,7 +310,7 @@
     } catch {}
     if (saved === "en" || saved === "fr") apply(saved);
     const THEME_KEY = "olanlive-theme";
-    const THEME_COLORS = { light: "#2c3d8f", dark: "#5C2A1E" };
+    const THEME_COLORS = { light: "#2c3d8f", dark: "#26305F" };
     const themeMetas = [...document.querySelectorAll('meta[name="theme-color"]')];
     const systemDark = matchMedia("(prefers-color-scheme: dark)");
     function readTheme() {
@@ -314,16 +329,16 @@
         meta.content = THEME_COLORS[chosenTheme || (forDark ? "dark" : "light")];
       });
       themeButtons.forEach((button) => {
-        const on = button.dataset.themeBtn === chosenTheme;
+        const on = button.dataset.themeBtn === (chosenTheme || "auto");
         button.setAttribute("aria-pressed", on ? "true" : "false");
         button.classList.toggle("text-paper", on);
         button.classList.toggle("text-paper/55", !on);
       });
+      labelThemeButtons(themeLang);
     }
     let themeAnimTimer = 0;
-    themeButtons.forEach((button) => button.addEventListener("click", () => {
-      const theme = button.dataset.themeBtn;
-      chosenTheme = chosenTheme === theme ? null : theme;
+    function setTheme(theme) {
+      chosenTheme = theme === "light" || theme === "dark" ? theme : null;
       try {
         if (chosenTheme) localStorage.setItem(THEME_KEY, chosenTheme);
         else localStorage.removeItem(THEME_KEY);
@@ -332,7 +347,9 @@
       window.clearTimeout(themeAnimTimer);
       themeAnimTimer = window.setTimeout(() => document.documentElement.classList.remove("olv-theme-anim"), 250);
       renderTheme();
-    }));
+    }
+    themeButtons.forEach((button) => button.addEventListener("click", () => setTheme(button.dataset.themeBtn)));
+    themeCycle.addEventListener("click", () => setTheme(THEME_NEXT[chosenTheme || "auto"]));
     systemDark.addEventListener("change", () => { if (!chosenTheme) renderTheme(); });
     window.addEventListener("storage", (event) => {
       if (event.key === THEME_KEY || event.key === null) { chosenTheme = readTheme(); renderTheme(); }
