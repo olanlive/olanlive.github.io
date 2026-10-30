@@ -38,6 +38,12 @@
     .olv-cycle .olv-i-light, .olv-cycle .olv-i-dark, :root[data-theme] .olv-cycle .olv-i-auto { display: none; }
     :root[data-theme="light"] .olv-cycle .olv-i-light, :root[data-theme="dark"] .olv-cycle .olv-i-dark { display: block; }
     @media (width < 48rem) { header .olv-seg { display: none; } header .olv-cycle { display: inline-flex; } .olv-gh-text { display: none; } }
+    /* 320 px : marges et cibles resserrées (cibles ≥ 44 px) pour que l'en-tête tienne ; colonnes Installation rétrécissables (le champ URL défile en interne) */
+    @media (width < 22.5rem) { header > div.max-w-6xl { padding-inline: .75rem; gap: .75rem; } header .olv-tools > a, header .olv-tools > button { min-width: 44px; } .bg-accent-soft .grid > div { min-width: 0; } }
+    /* Thème clair : gris foncés pour AA 4,5:1 (texte atténué du bloc Installation, langue inactive) */
+    @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .bg-accent-soft .text-muted { color: #59665F; } :root:not([data-theme="dark"]) header [data-lang].text-paper\/55 { color: color-mix(in oklab, var(--color-paper) 66%, transparent); } }
+    :root[data-theme="light"] .bg-accent-soft .text-muted { color: #59665F; }
+    :root[data-theme="light"] header [data-lang].text-paper\/55 { color: color-mix(in oklab, var(--color-paper) 66%, transparent); }
     @media (prefers-reduced-motion: no-preference) {
       html.olv-theme-anim, html.olv-theme-anim *, html.olv-theme-anim *::before, html.olv-theme-anim *::after { transition: background-color .2s ease, color .2s ease, border-color .2s ease, text-decoration-color .2s ease, box-shadow .2s ease; }
     }
